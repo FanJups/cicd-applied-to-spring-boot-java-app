@@ -16,6 +16,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		
+		
+		<project.build.finalName>${project.artifactId}-${project.version}</project.build.finalName>
       
       	<!-- solving error : Invalid or corrupt jarfile /app.jar -->
       
@@ -72,8 +75,11 @@
 				</executions>
 	            <configuration>
 	                <repository>${docker.image.prefix}/${project.artifactId}</repository>
+			<buildArgs>
+         			<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+      			</buildArgs>
 	                <serverId>index.docker.io</serverId>
-	      			<registryUrl>https://index.docker.io:443/v1/</registryUrl>
+	      		<registryUrl>https://index.docker.io:443/v1/</registryUrl>
 	            </configuration>
         	</plugin>
         	
