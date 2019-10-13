@@ -28,7 +28,7 @@
 		
 		<docker.image.prefix>fanjups</docker.image.prefix>
 		
-		<!-- how to skip docker in maven from my computer -->
+		<!--Not adding artifacts to remote repository-->
 		
 		<maven.deploy.skip>true</maven.deploy.skip>
 		
