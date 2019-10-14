@@ -35,6 +35,10 @@
 		<!-- GitHub OAuth token & server -->
 		<github.global.server>github</github.global.server>
         <github.global.oauth2Token>${env.GITHUB_OAUTH_TOKEN}</github.global.oauth2Token>
+        
+        <!-- Useful for Heroku Deployment -->
+        
+        <full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
 		
 	</properties>
 
@@ -159,6 +163,20 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!-- Useful for Heroku Deployment -->
+			
+			<plugin>
+		      <groupId>com.heroku.sdk</groupId>
+		      <artifactId>heroku-maven-plugin</artifactId>
+		      <version>2.0.11</version>
+		      <configuration>
+		        <appName>cicd-spring-boot-java-app</appName>
+		        <processTypes>
+		          <web>java $JAVA_OPTS -jar -Dserver.port=$PORT ${full-artifact-name}</web>
+		        </processTypes>
+		      </configuration>
+      		</plugin> 
         	
 		</plugins>
 	</build>
