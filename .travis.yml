@@ -25,6 +25,8 @@ script:
 #deploying the app on Docker
 - mvn deploy
 after_success:
+#Generating Site
+- mvn site
 - bash <(curl -s https://codecov.io/bash)
 # SonarCloud
 # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
