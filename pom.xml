@@ -32,6 +32,10 @@
 		
 		<maven.deploy.skip>true</maven.deploy.skip>
 		
+		<!-- GitHub OAuth token & server -->
+		<github.global.server>github</github.global.server>
+        <github.global.oauth2Token>${env.GITHUB_OAUTH_TOKEN}</github.global.oauth2Token>
+		
 	</properties>
 
 	<dependencies>
@@ -128,8 +132,103 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!-- Generating github  gh pages & maven project documents  -->
+            
+            <plugin>
+            
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-site-plugin</artifactId>
+            </plugin>
+            
+            <plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.12</version>
+				<configuration>
+					<message>Building site for ${project.name} ${project.version}</message>
+					<server>github</server>
+					
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
         	
 		</plugins>
 	</build>
+	
+	
+	<!-- Useful for GitHub site  -->
+	
+	<reporting>
+  
+  		<plugins>
+  		
+  			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-project-info-reports-plugin</artifactId>
+	            <version>3.0.0</version>
+	            <reportSets>
+	                <reportSet>
+	                    <reports>
+	                        <report>index</report>
+	                        <report>licenses</report>
+	                        <report>dependency-info</report>
+	                        <report>ci-management</report>
+	                        <report>dependencies</report>
+	                        <report>dependency-convergence</report>
+	                        <report>dependency-management</report>
+	                        <report>distribution-management</report>
+	                        <report>help</report>
+	                        <report>issue-management</report>
+	                        <report>mailing-lists</report>
+	                        <report>modules</report>
+	                        <report>plugin-management</report>
+	                        <report>plugins</report>
+	                        <report>team</report>
+	                        <report>scm</report>
+	                        <report>summary</report>
+	                        
+	                        
+	                    </reports>
+	                </reportSet>
+	            </reportSets>
+	        </plugin>
+  		
+  		</plugins>
+  
+  </reporting>
+  
+  <developers>
+  	<developer>
+  		<email>jupsfan@gmail.com</email>
+		<name>Fanon Jupkwo</name>
+		<url>https://github.com/FanJups</url>
+		<id>FanJups</id>
+  	</developer>
+      
+  </developers>
+  
+  <organization>
+		<name>FAN JUPS TECH</name>
+		<url>https://github.com/FanJups/</url>
+	</organization>
+  
+  <issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/FanJups/cicd-applied-to-spring-boot-java-app/issues</url>
+  </issueManagement>
+  
+  <scm>
+		<url>https://github.com/FanJups/cicd-applied-to-spring-boot-java-app</url>
+		<connection>scm:git:git://github.com/FanJups/cicd-applied-to-spring-boot-java-app.git</connection>
+		<developerConnection>scm:git:git://github.com/FanJups/cicd-applied-to-spring-boot-java-app.git</developerConnection>
+  </scm>
 
 </project>
