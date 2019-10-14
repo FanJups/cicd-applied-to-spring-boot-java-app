@@ -1,0 +1,3 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+cicd-applied-to-spring-boot-java-app,com.cicd.cicdappliedtospringbootjavaapp,CicdAppliedToSpringBootJavaAppApplication,5,3,0,0,2,1,1,1,1,1
+cicd-applied-to-spring-boot-java-app,com.cicd.cicdappliedtospringbootjavaapp.controller,HelloController,0,5,0,0,0,2,0,2,0,2
