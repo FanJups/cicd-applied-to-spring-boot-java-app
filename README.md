@@ -7,6 +7,8 @@ Implementing Continuous Integration/Continuous Delivery on Spring Boot Java App
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=com.cicd:cicd-applied-to-spring-boot-java-app&metric=alert_status)](https://sonarcloud.io/dashboard/index/com.cicd:cicd-applied-to-spring-boot-java-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Javadoc
+## I've added Javadoc plugin in pom.xml
 
 https://fanjups.github.io/cicd-applied-to-spring-boot-java-app/project-reports.html
+
+## I've added <packaging>jar</packaging>
