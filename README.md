@@ -16,3 +16,5 @@ https://fanjups.github.io/cicd-applied-to-spring-boot-java-app/project-reports.h
 ```
 <packaging> jar </packaging>
 ```
+
+## I've added mvn clean in .travis.yml
