@@ -18,3 +18,5 @@ https://fanjups.github.io/cicd-applied-to-spring-boot-java-app/project-reports.h
 ```
 
 ## I've added mvn clean in .travis.yml
+
+## I've created .dockerignore
