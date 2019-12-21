@@ -15,6 +15,7 @@ addons:
       secure: $SONAR_TOKEN # encrypted value of your token
 
 before_install:
+- mvn clean
 - echo "$DOCKER_PASSWORD" | docker login  -u "$DOCKER_USERNAME" --password-stdin
 - docker pull openjdk:8-jdk-alpine
 
