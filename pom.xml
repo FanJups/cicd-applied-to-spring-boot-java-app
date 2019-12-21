@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.cicd</groupId>
 	<artifactId>cicd-applied-to-spring-boot-java-app</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cicd-applied-to-spring-boot-java-app</name>
 	<description>Implementing CI/CD on Spring Boot Java App</description>
