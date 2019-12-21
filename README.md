@@ -11,4 +11,4 @@ Implementing Continuous Integration/Continuous Delivery on Spring Boot Java App
 
 https://fanjups.github.io/cicd-applied-to-spring-boot-java-app/project-reports.html
 
-## I've added <packaging>jar</packaging>
+## I've added "<packaging> jar </packaging>"
