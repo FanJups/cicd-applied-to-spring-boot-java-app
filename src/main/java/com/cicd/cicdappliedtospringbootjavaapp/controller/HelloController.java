@@ -10,7 +10,7 @@ public class HelloController {
         public String home() {
         return "Hello World from DZONE";
     }
-        @GetMapping("/sudo ")
+        @GetMapping("/sudo")
         public String home1() {
         return "Spring Boot";
     }
