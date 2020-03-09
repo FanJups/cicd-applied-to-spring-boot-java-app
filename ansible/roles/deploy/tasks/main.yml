@@ -4,4 +4,4 @@
 - name: This command will change the working directory
   shell:
     cmd: docker-compose up -d
-    chdir: ../
+    chdir: /var/lib/jenkins/workspace/pipeline-maven-ansible-1
