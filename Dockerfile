@@ -23,11 +23,3 @@ HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
 # Run the jar file 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
   
-  
-  
-  
-  
-  
-  
-  
-  
