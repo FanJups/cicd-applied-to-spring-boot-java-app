@@ -1,0 +1,4 @@
+- name: This command will change the working directory to somedir/.
+  shell:
+    cmd: kubectl apply -f app-pod.yml
+    chdir: /home/k8s-admin/k8/
