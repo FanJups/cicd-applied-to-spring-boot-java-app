@@ -5,3 +5,6 @@
   shell:
     cmd: docker-compose up -d
     chdir: /var/lib/jenkins/workspace/pipeline-maven-ansible-1
+
+
+
