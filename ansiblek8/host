@@ -1,0 +1,4 @@
+[cloud]
+#localhost              ansible_connection=local
+ec2-18-225-35-161.us-east-2.compute.amazonaws.com     ansible_connection=ssh        ansible_user=ubuntu        ansible_ssh_private_key_file=key.pem
+#other2.example.com     ansible_connection=ssh        ansible_user=myotheruser
