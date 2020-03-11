@@ -12,6 +12,6 @@ public class HelloController {
     }
         @GetMapping("/sudo")
         public String home1() {
-        return "Spring Boot -- k8 demo --check 5";
+        return "Spring Boot -- k8 demo --check 6";
     }
 }
