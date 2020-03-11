@@ -1,4 +1,5 @@
-- name: This command will change the working directory to somedir/.
-  shell:
-    cmd: kubectl apply -f app-pod.yml
-    chdir: /home/k8s-admin/k8/
+- name: Transfer executable script script
+  copy: src=deploy.sh dest=/tmp mode=0777
+
+- name: Execute the script
+  command: sh /tmp/deploy.sh
