@@ -4,31 +4,8 @@ language: java
 #we add the java development kit (jdk)
 jdk:
 - openjdk8
-services:
-#Linking Travis CI and Docker
-- docker
-# SonarCloud
-addons:
-  sonarcloud:
-    organization: "cicd-applied-to-spring-boot-java-app"
-    token:
-      secure: $SONAR_TOKEN # encrypted value of your token
-
-before_install:
-- mvn clean
-- echo "$DOCKER_PASSWORD" | docker login  -u "$DOCKER_USERNAME" --password-stdin
-- docker pull openjdk:8-jdk-alpine
 
 script:
 #We avoid this error :" the job exceeded the maximum log length and has been terminated "
 - echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"\n    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n  <mirrors>\n    <mirror>\n      <id>mvnsearch-unavailable</id>\n      <name>mvnsearch-unavailable</name>\n      <mirrorOf>mvnsearch</mirrorOf>\n      <url>http://repo1.maven.org/maven2</url>\n    </mirror>\n  </mirrors>\n  <profiles>\n    <profile>\n      <id>no-mvnsearch</id>\n      <repositories>\n        <repository>\n          <id>mvnsearch</id>\n          <url>http://www.mvnsearch.org/maven2</url>\n          <releases>\n            <enabled>true</enabled>\n          </releases>\n          <snapshots>\n            <enabled>true</enabled>\n          </snapshots>\n        </repository>\n      </repositories>\n    </profile>\n  </profiles>\n  <activeProfiles>\n    <activeProfile>no-mvnsearch</activeProfile>\n  </activeProfiles>\n</settings>' > $HOME/.m2/settings.xml
 - cat $HOME/.m2/settings.xml
-#deploying the app on Docker & Heroku
-- mvn heroku:deploy
-after_success:
-#Generating Site
-- travis_wait mvn site
-- bash <(curl -s https://codecov.io/bash)
-# SonarCloud
-# the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
