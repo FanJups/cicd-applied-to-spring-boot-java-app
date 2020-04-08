@@ -30,8 +30,7 @@ node{
 			    sh "docker push ${ImageName}:${imageTag}"
 			}
 		}
-		stage('Deploy'){		
-               // sh "docker-compose up -d"
+	stage('Deploy'){		
                sh "ansible-playbook -i ansiblek8/host ansiblek8/site.yml"
 		}
 	}
