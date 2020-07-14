@@ -17,7 +17,7 @@ node{
 		
         stage('SonarQube Analysis'){
 		    withSonarQubeEnv('sonar') {
-                sh "/home/ubuntu/sonar-scanner-4.2.0.1873-linux/bin/sonar-scanner -Dsonar.projectKey=${JOB_NAME} -Dsonar.projectName=${JOB_NAME} -Dsonar.projectVersion=${BUILD_NUMBER} -Dsonar.sources=. -Dsonar.java.binaries=target/ -Dsonar.issuesReport.html.enable=true -Dsonar.issuesReport.html.location=. -Dsonar.issuesReport.html.name=sample" 
+                sh "/opt/sonar-scanner -Dsonar.projectKey=${JOB_NAME} -Dsonar.projectName=${JOB_NAME} -Dsonar.projectVersion=${BUILD_NUMBER} -Dsonar.sources=. -Dsonar.java.binaries=target/ -Dsonar.issuesReport.html.enable=true -Dsonar.issuesReport.html.location=. -Dsonar.issuesReport.html.name=sample" 
             }
 		}
 		
