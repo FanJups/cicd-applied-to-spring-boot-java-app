@@ -12,7 +12,7 @@ node{
 		}
 		stage('Compile, Test and Coverage'){
 			sh "/opt/apache-maven-3.6.3/bin/mvn -B clean deploy -DskipTests"
-			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "/var/lib/jenkins/workspace/${JOB_NAME}/target/site/jacoco", reportFiles: 'index.html', reportName: 'Jacoco HTML Report', reportTitles: 'Jacoco'])
+			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "/var/lib/jenkins/workspace/${JOB_NAME}/target/site/jacoco/", reportFiles: 'index.html', reportName: 'Jacoco HTML Report', reportTitles: 'Jacoco'])
 		}
 		
         stage('SonarQube Analysis'){
