@@ -11,7 +11,7 @@ node{
 			imageTag= readFile('.git/commit-id').trim()
 		}
 		stage('Compile, Test and Coverage'){
-			sh "/home/ubuntu/apache-maven-3.6.3/bin/mvn -B clean deploy"
+			sh "/opt/apache-maven-3.6.3/bin/mvn -B clean deploy"
 			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/pipeline-maven-1/target/site/jacoco', reportFiles: 'index.html', reportName: 'Jacoco HTML Report', reportTitles: 'Jacoco'])
 		}
 		
