@@ -17,7 +17,7 @@ node{
 		
         stage('SonarQube Analysis'){
 		    withSonarQubeEnv('sonar') {
-                sh "/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=${JOB_NAME} -Dsonar.projectName=${JOB_NAME} -Dsonar.projectVersion=${BUILD_NUMBER} -Dsonar.sources=. -Dsonar.java.binaries=target/ -Dsonar.issuesReport.html.enable=true -Dsonar.issuesReport.html.location=. -Dsonar.issuesReport.html.name=sample" 
+                sh "/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=${JOB_NAME} -Dsonar.projectName=${JOB_NAME} -Dsonar.projectVersion=${BUILD_NUMBER} -Dsonar.sources=. -Dsonar.java.binaries=target/ -Dsonar.issuesReport.html.enable=true -Dsonar.issuesReport.html.location=. -Dsonar.issuesReport.html.name=sample -Dsonar.login=admin -Dsonar.password=admin123" 
             }
 		}
 		
