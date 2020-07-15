@@ -5,4 +5,4 @@
   copy: src=deployment dest=/tmp
   
 - name: Execute the script
-  command: sh /tmp/deploy.sh
+  command: bash /tmp/deploy.sh
