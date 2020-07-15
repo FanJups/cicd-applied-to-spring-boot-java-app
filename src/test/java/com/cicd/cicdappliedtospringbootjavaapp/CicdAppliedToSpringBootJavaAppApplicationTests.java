@@ -21,7 +21,7 @@ public class CicdAppliedToSpringBootJavaAppApplicationTests {
 	@Test
 	public void contextLoads() {
 		
-		Assert.assertEquals("Hello World from DZONE",helloController.home() );
+		Assert.assertEquals("Welcome To Nucleus",helloController.home() );
 	}
 	
 	
