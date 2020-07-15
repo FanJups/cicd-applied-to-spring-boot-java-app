@@ -1,7 +1,7 @@
 node{
 	def Namespace = "default"
 	def ImageName = "sudiptod/cicd"
-	def Creds = "DockerHub_Credentials"
+	def Creds = "DockerHub"
 	def GITHUB_URL = "https://github.com/sudipto92/cicd-applied-to-spring-boot-java-app.git"
 	def GITHUB_Creds = "GITHUB_CREDENTIALS"
 	try{
