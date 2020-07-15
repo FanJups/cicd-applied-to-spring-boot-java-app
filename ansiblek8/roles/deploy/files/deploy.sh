@@ -1,7 +1,7 @@
 #!/bin/bash
-#sudo scp /etc/kubernetes/admin.conf $HOME/
-#sudo chown $(id -u):$(id -g) $HOME/admin.conf
-#export KUBECONFIG=$HOME/admin.conf
+sudo scp /etc/kubernetes/admin.conf $HOME/
+sudo chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
 
 
 kubectl get services | grep knote
