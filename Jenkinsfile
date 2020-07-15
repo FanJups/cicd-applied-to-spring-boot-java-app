@@ -22,18 +22,20 @@ node{
 		}
 		
 		
-		stage('Docker Build, Push'){
-			withDockerRegistry([credentialsId: "${Creds}", url:'https://index.docker.io/v1/']) {
-			    sh "docker build -t ${ImageName}:${imageTag} ."
-			    sh "docker tag ${ImageName}:${imageTag} ${ImageName}:latest"
-			    sh "docker push ${ImageName}:latest"
-			    sh "docker push ${ImageName}:${imageTag}"
-			}
+	stage('Docker Build, Push'){
+		withDockerRegistry([credentialsId: "${Creds}", url:'https://index.docker.io/v1/']) {
+		   sh "docker build -t ${ImageName}:${imageTag} ."
+		   sh "docker tag ${ImageName}:${imageTag} ${ImageName}:latest"
+		   sh "docker push ${ImageName}:latest"
+		   sh "docker push ${ImageName}:${imageTag}"
 		}
+	}
+		
 	stage('Deploy'){		
                sh "ansible-playbook -i ansiblek8/host ansiblek8/site.yml"
 		}
 	}
+	
 	catch (err) {
 		currentBuild.result = 'FAILURE'
 	}
