@@ -1,5 +1,8 @@
 - name: Transfer executable script script
   copy: src=deploy.sh dest=/tmp mode=0777
 
+- name: Transfer deployment script
+  copy: src=deployment dest=/tmp
+  
 - name: Execute the script
   command: sh /tmp/deploy.sh
