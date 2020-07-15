@@ -5,7 +5,7 @@ node{
 	def GITHUB_URL = "https://github.com/sudipto92/cicd-applied-to-spring-boot-java-app.git"
 	def GITHUB_Creds = "GITHUB_CREDENTIALS"
 	try{
-		
+	 	
 		stage('Checkout'){
 			git credentialsId: "${GITHUB_Creds}", url: "${GITHUB_URL}"
 			sh "git rev-parse --short HEAD > .git/commit-id"
