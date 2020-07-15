@@ -3,6 +3,8 @@
 #sudo chown $(id -u):$(id -g) $HOME/admin.conf
 #export KUBECONFIG=$HOME/admin.conf
 
+whoami >/tmp/a.txt
+
 
 kubectl get services | grep knote
 RESULT=$?
