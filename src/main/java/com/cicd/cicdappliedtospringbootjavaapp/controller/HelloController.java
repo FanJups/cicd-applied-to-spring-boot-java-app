@@ -8,7 +8,7 @@ public class HelloController {
 
         @GetMapping("/")
         public String home() {
-        return "Hello World from DZONE";
+        return "Welcome To Nucleus";
     }
         @GetMapping("/sudo")
         public String home1() {
