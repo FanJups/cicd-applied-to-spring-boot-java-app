@@ -33,7 +33,7 @@ node{
 	}
 		
 	stage('Deploy'){		
-               sh "ansible-playbook -i ansiblek8/host ansiblek8/site.yml"
+               sh " curl -X POST https://admin:admin@34.239.159.169/api/v2/job_templates/23/launch/ --insecure"
 		}
 	}
 	
