@@ -3,7 +3,7 @@ node{
 	def ImageName = "sudiptod/cicd"
 	def Creds = "DockerHub_Credentials"
 	def GITHUB_URL = "https://github.com/sudipto92/cicd-applied-to-spring-boot-java-app.git"
-    def GITHUB_Creds = "GITHUB_CREDENTIALS"
+	def GITHUB_Creds = "GITHUB_CREDENTIALS"
 	try{
 		
 		stage('Checkout'){
@@ -17,10 +17,10 @@ node{
 		}
 		
         stage('SonarQube Analysis'){
-		    withSonarQubeEnv('sonar') {
+             withSonarQubeEnv('sonar') {
                 sh "/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=${JOB_NAME} -Dsonar.projectName=${JOB_NAME} -Dsonar.projectVersion=${BUILD_NUMBER} -Dsonar.sources=. -Dsonar.java.binaries=target/ -Dsonar.issuesReport.html.enable=true -Dsonar.issuesReport.html.location=. -Dsonar.issuesReport.html.name=sample -Dsonar.login=admin -Dsonar.password=admin123" 
-            }
-		}
+             }
+	}
 		
 		
 	stage('Docker Build, Push'){
@@ -41,7 +41,3 @@ node{
 		currentBuild.result = 'FAILURE'
 	}
 }
-
-
-
-
