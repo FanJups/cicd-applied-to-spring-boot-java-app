@@ -12,6 +12,6 @@ public class HelloController {
     }
         @GetMapping("/sudo")
         public String home1() {
-        return "Spring Boot Tetsting";
+        return "Spring Boot Tetsting ";
     }
 }
