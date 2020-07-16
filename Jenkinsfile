@@ -33,7 +33,7 @@ node{
 	}
 		
 	stage('Deploy'){		
-               sh " curl -X POST https://admin:admin@34.239.159.169/api/v2/job_templates/23/launch/ --insecure"
+               sh " curl -X POST https://admin:admin@172.31.75.85/api/v2/job_templates/23/launch/ --insecure"
 		}
 	}
 	
