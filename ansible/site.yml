@@ -1,0 +1,6 @@
+---
+- hosts: cloud
+  become: yes
+  roles:
+     - deploy
+

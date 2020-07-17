@@ -64,7 +64,7 @@
 			</plugin>
 			
 			<!-- spotify's dockerfile-maven-plugin -->
-			
+			<!--
 			<plugin>
 	            <groupId>com.spotify</groupId>
 	            <artifactId>dockerfile-maven-plugin</artifactId>
@@ -87,7 +87,7 @@
 	            </configuration>
         	</plugin>
         	
-        	<!-- maven-dependency-plugin useful for creating docker image -->
+        	 maven-dependency-plugin useful for creating docker image -->
         	
         	<plugin>
 		     

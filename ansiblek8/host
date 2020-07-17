@@ -1,0 +1,4 @@
+[cloud]
+#localhost              ansible_connection=local
+172.31.44.14     ansible_connection=ssh        ansible_user=k8s-admin        ansible_password=qwerty
+#other2.example.com     ansible_connection=ssh        ansible_user=myotheruser

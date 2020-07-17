@@ -5,10 +5,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	
-	@GetMapping("/")
-	public String home() {
-        return "Hello World from DZONE";
-    }
 
+        @GetMapping("/")
+        public String home() {
+        return "Welcome To Nucleus";
+    }
+        @GetMapping("/sudo")
+        public String home1() {
+        return "Spring Boot Application Testing ";
+    }
 }

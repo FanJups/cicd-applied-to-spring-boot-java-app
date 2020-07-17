@@ -1,0 +1,6 @@
+version: "3"
+services:
+     spring-boot-app:
+          image: sudiptod/cicd:latest
+          ports:
+               - 80:8080
